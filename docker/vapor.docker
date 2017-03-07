@@ -1,0 +1,4 @@
+from vapor/vapor
+
+WORKDIR /ekko/
+RUN swift build

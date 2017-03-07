@@ -1,0 +1,16 @@
+version: "2"
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: nginx.docker
+    ports:
+      - "8080:80"
+    links:
+      - vapor
+  vapor:
+    build:
+      context: ./
+      dockerfile: vapor.docker
+    volumes:
+      - ./:/ekko

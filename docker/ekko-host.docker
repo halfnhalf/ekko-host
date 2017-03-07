@@ -1,0 +1,8 @@
+FROM vapor/vapor
+
+ADD ./ /ekko-host
+
+RUN cd /ekko-host && swift build
+
+ENTRYPOINT /ekko-host/.build/debug/ekko-host
+WORKDIR /ekko-host

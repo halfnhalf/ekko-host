@@ -3,14 +3,13 @@ services:
   nginx:
     build:
       context: ./
-      dockerfile: nginx.docker
+      dockerfile: docker/nginx.docker
     ports:
       - "8080:80"
     links:
-      - vapor
-  vapor:
+      - ekko-host
+
+  ekko-host:
     build:
       context: ./
-      dockerfile: vapor.docker
-    volumes:
-      - ./:/ekko
+      dockerfile: docker/ekko-host.docker

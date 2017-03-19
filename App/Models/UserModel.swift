@@ -3,10 +3,13 @@ import Fluent
 
 final class User: Model {
     var id: Node?
+    var exists: Bool = false
+
     var name: String?
 
     init(name: String) {
-        self.name = name
+      self.id = nil
+      self.name = name
     }
 
     init(node: Node, in context: Context) throws {

@@ -13,8 +13,11 @@ services:
     build:
       context: ./
       dockerfile: docker/ekko-host.docker
+    depends_on:
+      - database
     links:
       - database
+    restart: unless-stopped
 
   database:
     image: postgres
